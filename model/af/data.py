@@ -3,17 +3,8 @@ from sqlalchemy import ForeignKey
 from sqlalchemy import Column
 from sqlalchemy import String
 from sqlalchemy import Integer
-from model.base import Base
+from model.base.database import Base
 from model.provider.data import Provider
-
-class Activity(Base):
-    __tablename__ = 'af_activity'
-
-    id = Column(Integer, primary_key=True, unique=True, index=True, autoincrement=True, nullable=False)
-    name = Column(String, unique=True, index=True, nullable=False)
-    time = Column(Integer, unique=True, index=True, nullable=False)
-    image = Column(String, unique=True, index=True)
-    description = Column(String)
 
 
 class Endpoint(Base):
@@ -27,3 +18,13 @@ class Endpoint(Base):
     status = Column(Integer, nullable=False, default=200)
 
     provider = relationship(Provider)
+
+
+class Activity(Base):
+    __tablename__ = 'af_activity'
+
+    id = Column(Integer, primary_key=True, unique=True, index=True, autoincrement=True, nullable=False)
+    name = Column(String, unique=True, index=True, nullable=False)
+    time = Column(Integer, unique=True, index=True, nullable=False)
+    image = Column(String, unique=True, index=True)
+    description = Column(String)

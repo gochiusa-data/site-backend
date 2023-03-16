@@ -1,6 +1,6 @@
 from typing import Union
 from typing import List
-from model.base import ResponseModel
+from model.base.response import ResponseModel
 from model.provider.response import Provider
 
 
