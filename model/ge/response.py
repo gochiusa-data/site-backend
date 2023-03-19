@@ -1,6 +1,5 @@
 from typing import Union
 from typing import List
-from datetime import datetime
 from model.base.response import ResponseModel
 from model.provider.response import Provider
 
@@ -13,17 +12,16 @@ class Endpoint(ResponseModel):
     status: int
 
 
-class Activity(ResponseModel):
+class Page(ResponseModel):
     id: int
     name: str
-    time: datetime
     image: str
     description: Union[str, None]
 
 
-class Activities(ResponseModel):
-    items: List[Activity]
+class Pages(ResponseModel):
+    items: List[Page]
 
 
-class ActivityDetail(Activity):
+class PageDetail(Page):
     endpoint: List[Endpoint]

@@ -11,7 +11,7 @@ database = DBsession()
 
 
 @router.get('/af', response_model=Activities)
-def list_af_activity():
+def list_af_activities():
     activities = database.query(Activity).all()
     return Activities(items=activities)
 
@@ -21,13 +21,7 @@ def show_af_activity(id: int):
     activity = database.query(Activity).filter(Activity.id == id).first()
     if activity:
         endpoint = database.query(Endpoint).filter(Endpoint.activity_id == id).all()
-        return ActivityDetail(
-            id=activity.id,
-            name=activity.name,
-            time=activity.time,
-            image=activity.image,
-            description=activity.description,
-            endpoint=endpoint
-        )
+        activity.endpoint = endpoint
+        return activity
     else:
-        raise HTTPException(404, "相关资源未找到！")
+        raise HTTPException(404)
