@@ -16,7 +16,6 @@ class Endpoint(ResponseModel):
 class Activity(ResponseModel):
     id: int
     name: str
-    time: datetime
     image: str
     description: Union[str, None]
 
@@ -26,4 +25,5 @@ class Activities(ResponseModel):
 
 
 class ActivityDetail(Activity):
+    time: datetime
     endpoint: List[Endpoint]
