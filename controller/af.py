@@ -16,11 +16,11 @@ def list_af_activities():
     return Activities(items=activities)
 
 
-@router.get('/af/{id}', response_model=ActivityDetail)
-def show_af_activity(id: int):
-    activity = database.query(Activity).filter(Activity.id == id).first()
+@router.get('/af/{activity_id}', response_model=ActivityDetail)
+def show_af_activity(activity_id: int):
+    activity = database.query(Activity).filter(Activity.id == activity_id).first()
     if activity:
-        endpoint = database.query(Endpoint).filter(Endpoint.activity_id == id).all()
+        endpoint = database.query(Endpoint).filter(Endpoint.activity_id == activity_id).all()
         activity.endpoint = endpoint
         return activity
     else:

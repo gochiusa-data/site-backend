@@ -16,11 +16,11 @@ def list_ge_pages():
     return Pages(items=pages)
 
 
-@router.get("/ge/{id}", response_model=PageDetail)
-def show_ge_page(id):
-    page = database.query(Page).filter(Page.id == id).first()
+@router.get("/ge/{page_id}", response_model=PageDetail)
+def show_ge_page(page_id):
+    page = database.query(Page).filter(Page.id == page_id).first()
     if page:
-        endpoint = database.query(Endpoint).filter(Endpoint.page_id == id).all()
+        endpoint = database.query(Endpoint).filter(Endpoint.page_id == page_id).all()
         page.endpoint = endpoint
         return page
     else:
