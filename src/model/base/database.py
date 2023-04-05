@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # 基础设置
-path = "sqlite:///./database.db"
+path = "sqlite:///../database.db"
 engine = create_engine(path, connect_args={"check_same_thread": False})
 
 # 通用

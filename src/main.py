@@ -1,12 +1,10 @@
 from fastapi import FastAPI
-from fastapi import APIRouter
+from controller import provider
 from controller import af
 from controller import ge
 
 app = FastAPI()
-router = APIRouter(prefix="/api/beta")
 
-router.include_router(af.router)
-router.include_router(ge.router)
-
-app.include_router(router)
+app.include_router(provider.router)
+app.include_router(af.router)
+app.include_router(ge.router)
