@@ -1,10 +1,10 @@
 from fastapi import APIRouter
 from fastapi import HTTPException
 from model.base.database import DBsession
-from model.ge.data import Page
-from model.ge.data import Endpoint
-from model.ge.response import Pages
-from model.ge.response import PageDetail
+from model.data.provider import Page
+from model.data.provider import Endpoint
+from model.response.provider import Pages
+from model.response.provider import PageDetail
 
 router = APIRouter()
 database = DBsession()

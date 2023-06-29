@@ -1,10 +1,10 @@
 from fastapi import APIRouter
 from fastapi import HTTPException
 from model.base.database import DBsession
-from model.af.data import Activity
-from model.af.data import Endpoint
-from model.af.response import Activities
-from model.af.response import ActivityDetail
+from model.data.af import Activity
+from model.data.af import Endpoint
+from model.response.af import Activities
+from model.response.af import ActivityDetail
 
 router = APIRouter()
 database = DBsession()
