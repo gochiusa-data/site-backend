@@ -10,4 +10,4 @@ database = DBsession()
 @router.get("/provider", response_model=Providers)
 def list_providers():
     providers = database.query(Provider).all()
-    return Providers(items=providers)
+    return Providers(items=providers) # type: ignore

@@ -1,10 +1,10 @@
 from fastapi import APIRouter
 from fastapi import HTTPException
 from model.base.database import DBsession
-from model.data.provider import Page
-from model.data.provider import Endpoint
-from model.response.provider import Pages
-from model.response.provider import PageDetail
+from model.data.ge import Page
+from model.data.ge import Endpoint
+from model.response.ge import Pages
+from model.response.ge import PageDetail
 
 router = APIRouter()
 database = DBsession()
@@ -13,7 +13,7 @@ database = DBsession()
 @router.get("/ge", response_model=Pages)
 def list_ge_pages():
     pages = database.query(Page).all()
-    return Pages(items=pages)
+    return Pages(items=pages) # type: ignore
 
 
 @router.get("/ge/{page_id}", response_model=PageDetail)

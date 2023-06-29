@@ -13,7 +13,7 @@ database = DBsession()
 @router.get('/af', response_model=Activities)
 def list_af_activities():
     activities = database.query(Activity).all()
-    return Activities(items=activities)
+    return Activities(items=activities) # type: ignore
 
 
 @router.get('/af/{activity_id}', response_model=ActivityDetail)
