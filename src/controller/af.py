@@ -3,8 +3,8 @@ from fastapi import HTTPException
 from model.base.database import DBsession
 from model.data.af import Activity
 from model.data.af import Endpoint
-from model.response.af import Activities
-from model.response.af import ActivityDetail
+from model.response.activity import Activities
+from model.response.activity import ActivityDetail
 
 router = APIRouter()
 database = DBsession()
