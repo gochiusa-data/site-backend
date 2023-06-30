@@ -3,8 +3,8 @@ from fastapi import HTTPException
 from model.base.database import DBsession
 from model.data.ge import Page
 from model.data.ge import Endpoint
-from model.response.ge import Pages
-from model.response.ge import PageDetail
+from model.response.page import Pages
+from model.response.page import PageDetail
 
 router = APIRouter()
 database = DBsession()
