@@ -5,7 +5,7 @@ from sqlalchemy import Column
 from sqlalchemy import String
 from sqlalchemy import Integer
 from model.base.database import Base
-from model.provider.data import Provider
+from model.data.provider import Provider
 
 
 class Endpoint(Base):
