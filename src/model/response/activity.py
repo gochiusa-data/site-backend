@@ -1,12 +1,12 @@
 from typing import Union
 from typing import List
 from model.base.response import ResponseModel
-from model.response.page import PageInfo
+from model.response.page import PageInfoResponse
 
 
-class Activity(ResponseModel):
+class ActivityResponse(ResponseModel):
     id: int
     name: str
     image: str
     description: Union[str, None]
-    page: List[PageInfo]
+    page: List[PageInfoResponse]

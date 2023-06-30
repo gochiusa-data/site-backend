@@ -2,7 +2,7 @@ from typing import List
 from model.base.response import ResponseModel
 
 
-class Provider(ResponseModel):
+class ProviderResponse(ResponseModel):
     id: int
     name: str
     avatar: str
@@ -10,6 +10,6 @@ class Provider(ResponseModel):
     description: str
 
 
-class ProviderInfo(Provider):
+class ProviderInfo(ResponseModel):
     id: int
     name: str

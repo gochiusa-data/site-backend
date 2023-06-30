@@ -3,7 +3,7 @@ from model.base.response import ResponseModel
 from model.response.provider import ProviderInfo
 
 
-class Endpoint(ResponseModel):
+class EndpointResponse(ResponseModel):
     id: int
     name: str
     url: str
