@@ -7,7 +7,7 @@ database = DBsession()
 
 class PageService:
     @staticmethod
-    def get_by_id(id):
+    def get(id):
         page = database.query(Page).filter(Page.id == id).first()
         if page:
             return page

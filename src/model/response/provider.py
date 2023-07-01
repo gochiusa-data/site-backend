@@ -10,6 +10,6 @@ class ProviderResponse(ResponseModel):
     description: str
 
 
-class ProviderInfo(ResponseModel):
+class ProviderInfoResponse(ResponseModel):
     id: int
     name: str
