@@ -7,7 +7,7 @@ database = DBsession()
 
 class ProviderService:
     @staticmethod
-    def get_by_id(id):
+    def get(id):
         provider = database.query(Provider).filter(Provider.id == id).first()
         if provider:
             return provider

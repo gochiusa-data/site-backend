@@ -8,5 +8,6 @@ router = APIRouter()
 
 @router.get('/activity/{activity_id}', response_model=ActivityResponse)
 def show_activity(activity_id: int):
-    activity = ActivityService.get_by_id(activity_id)
-    return activity_id
+    activity = ActivityService.get(activity_id)
+    response = ActivityResponse.from_orm(activity)
+    return response

@@ -7,7 +7,7 @@ database = DBsession()
 
 class ActivityService:
     @staticmethod
-    def get_by_id(id):
+    def get(id):
         activity = database.query(Activity).filter(Activity.id == id).first()
         if activity:
             return activity

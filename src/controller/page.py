@@ -8,5 +8,6 @@ router = APIRouter()
 
 @router.get('/page/{page_id}', response_model=PageResponse)
 def show_activity(page_id: int):
-    activity = PageService.get_by_id(page_id)
-    return page_id
+    page = PageService.get(page_id)
+    response = PageResponse.from_orm(page)
+    return response

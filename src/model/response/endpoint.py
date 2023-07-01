@@ -1,6 +1,6 @@
 from typing import List
 from model.base.response import ResponseModel
-from model.response.provider import ProviderInfo
+from model.response.provider import ProviderInfoResponse
 
 
 class EndpointResponse(ResponseModel):
@@ -8,4 +8,4 @@ class EndpointResponse(ResponseModel):
     name: str
     url: str
     status: int
-    provider: ProviderInfo
+    provider: ProviderInfoResponse
