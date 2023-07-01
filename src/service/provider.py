@@ -7,9 +7,6 @@ database = DBsession()
 
 class ProviderService:
     @staticmethod
-    def get(id):
-        provider = database.query(Provider).filter(Provider.id == id).first()
-        if provider:
-            return provider
-        else:
-            raise HTTPException(404)
+    def get_all():
+        provider = database.query(Provider).all()
+        return provider
