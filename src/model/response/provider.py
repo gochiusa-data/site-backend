@@ -1,4 +1,5 @@
 from typing import List
+from model.response.item import ItemsResponse
 from model.base.response import ResponseModel
 
 
@@ -13,3 +14,6 @@ class ProviderResponse(ResponseModel):
 class ProviderInfoResponse(ResponseModel):
     id: int
     name: str
+
+
+ProvidersResponse = ItemsResponse.create(ProviderResponse)

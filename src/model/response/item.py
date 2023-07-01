@@ -1,7 +1,9 @@
 from typing import List
 from typing import Any
-from model.base.response import ResponseModel
+from pydantic import create_model
 
 
-class ItemsResponse(ResponseModel):
-    items: List[Any]
+class ItemsResponse:
+    @staticmethod
+    def create(model):
+        return create_model("ItemsResponse", items = (List[model], ...))

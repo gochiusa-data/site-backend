@@ -1,13 +1,12 @@
 from fastapi import APIRouter
 from service.provider import ProviderService
-from model.response.provider import ProviderResponse
-from model.response.item import ItemsResponse
+from model.response.provider import ProvidersResponse
 
 router = APIRouter()
 
 
-@router.get('/provider', response_model=ItemsResponse)
+@router.get('/provider', response_model=ProvidersResponse)
 def show_activity():
     provider = ProviderService.get_all()
-    response = ItemsResponse(items=provider)
+    response = ProvidersResponse(items=provider)
     return response

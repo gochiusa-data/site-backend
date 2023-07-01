@@ -1,5 +1,4 @@
 from sqlalchemy.orm import relationship
-from sqlalchemy import DateTime
 from sqlalchemy import Column
 from sqlalchemy import String
 from sqlalchemy import Integer
