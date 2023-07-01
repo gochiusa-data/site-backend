@@ -1,13 +1,12 @@
 from fastapi import APIRouter
-from model.base.database import DBsession
-from model.data.provider import Provider
-from model.response.provider import Providers
+from service.provider import ProviderService
+from model.response.provider import ProvidersResponse
 
 router = APIRouter()
-database = DBsession()
 
 
-@router.get("/provider", response_model=Providers)
-def list_providers():
-    providers = database.query(Provider).all()
-    return Providers(items=providers) # type: ignore
+@router.get('/provider', response_model=ProvidersResponse)
+def show_activity():
+    provider = ProviderService.get_all()
+    response = ProvidersResponse(items=provider)
+    return response
