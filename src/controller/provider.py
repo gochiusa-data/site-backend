@@ -8,5 +8,5 @@ router = APIRouter()
 @router.get('/provider', response_model=ProvidersResponse)
 def show_activity():
     provider = ProviderService.get_all()
-    response = ProvidersResponse(items=provider)
+    response = ProvidersResponse(items=provider) # type: ignore
     return response

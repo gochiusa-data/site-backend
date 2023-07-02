@@ -16,4 +16,5 @@ class ProviderInfoResponse(ResponseModel):
     name: str
 
 
-ProvidersResponse = ItemsResponse.create(ProviderResponse)
+class ProvidersResponse(ItemsResponse[ProviderResponse]):
+    pass
