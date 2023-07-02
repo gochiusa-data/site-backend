@@ -1,9 +1,10 @@
 from typing import List
-from typing import Any
-from pydantic import create_model
+from typing import TypeVar
+from typing import Generic
+from model.base.response import ResponseModel
+
+T = TypeVar('T')
 
 
-class ItemsResponse:
-    @staticmethod
-    def create(model):
-        return create_model("ItemsResponse", items = (List[model], ...))
+class ItemsResponse(ResponseModel, Generic[T]):
+    items: List[T]
